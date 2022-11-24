@@ -27,7 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_daftar" />
     <EditText
-        android:id="@+id/etregusername"
+        android:id="@+id/et_regusername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tv_regusername" />
@@ -37,33 +37,19 @@
         android:layout_height="wrap_content"
         android:text="Tanggal Lahir"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/etregusername" />
+        app:layout_constraintTop_toBottomOf="@+id/et_regusername" />
     <EditText
         android:id="@+id/etreglahir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tv_reglahir" />
     <TextView
-        android:id="@+id/tv_regjenis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Jenis Kelamin"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/etreglahir" />
-
-    <EditText
-        android:id="@+id/etregjenis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tv_regjenis" />
-
-    <TextView
         android:id="@+id/tv_regpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Password"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/etregjenis" />
+        app:layout_constraintTop_toBottomOf="@+id/etreglahir" />
 
     <EditText
         android:id="@+id/et_regpassword"
