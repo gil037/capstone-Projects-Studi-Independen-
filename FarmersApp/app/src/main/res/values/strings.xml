@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">FarmersApp</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="errorusername">Username Tidak Boleh Kosong</string>
+    <string name="errorlahir">Tanggal Lahir Tidak Boleh Kosong</string>
+    <string name="emptyusername">Username Tidak Valid</string>
+    <string name="errorpass">Password Tidak Boleh Kosong</string>
+    <string name="lenghtpass">Password Minimal 6 Karakter</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
