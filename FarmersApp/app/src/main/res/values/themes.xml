@@ -13,4 +13,12 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="ButtonGeneral">
+    <item name="android:backgroundTint">#90EE90</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginRight">16dp</item>
+    <item name="android:layout_marginLeft">16dp</item>
+    <item name="android:layout_marginBottom">16dp</item>
+    </style>
 </resources>
