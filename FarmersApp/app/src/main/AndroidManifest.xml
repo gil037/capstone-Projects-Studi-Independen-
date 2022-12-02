@@ -14,8 +14,7 @@
         android:theme="@style/Theme.FarmersApp"
         tools:targetApi="31">
         <activity
-            android:name=".DetailProductActivity"
-            android:exported="false" />
+
         <activity
             android:name=".RegisterActivity"
             android:exported="false">
