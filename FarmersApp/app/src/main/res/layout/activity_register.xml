@@ -18,44 +18,73 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
     <TextView
-        android:id="@+id/tv_regusername"
+        android:id="@+id/tv_regnama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="600dp"
-        android:text="username"
+        android:text="Nama"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_daftar" />
     <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_regnama" />
+
+    <TextView
+        android:id="@+id/tv_regusername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="550dp"
+        android:text="@string/username"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et" />
+
+    <EditText
         android:id="@+id/et_regusername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_regusername" />
+
     <TextView
-        android:id="@+id/tv_reglahir"
+        android:id="@+id/tv_regphone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tanggal Lahir"
+        android:inputType="phone"
+        android:text="Nomer Telepon"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/et_regusername" />
+        app:layout_constraintTop_toBottomOf="@+id/et_regusername"
+        tools:layout_editor_absoluteX="-61dp" />
+
     <EditText
-        android:id="@+id/etreglahir"
+        android:id="@+id/etregphone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tv_reglahir" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_regphone" />
     <TextView
         android:id="@+id/tv_regpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Password"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/etreglahir" />
+        app:layout_constraintTop_toBottomOf="@+id/etregphone" />
 
     <EditText
         android:id="@+id/et_regpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_regpassword" />
+
     <Button
         android:id="@+id/btnregister"
         android:layout_width="wrap_content"
@@ -63,7 +92,7 @@
         android:text="Daftar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_regpassword"/>
+        app:layout_constraintTop_toBottomOf="@+id/et_regpassword" />
 
     <TextView
         android:id="@+id/tv_login"
