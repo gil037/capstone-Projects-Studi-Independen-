@@ -6,5 +6,16 @@
     <string name="emptyusername">Username Tidak Valid</string>
     <string name="errorpass">Password Tidak Boleh Kosong</string>
     <string name="lenghtpass">Password Minimal 6 Karakter</string>
+    <string name="username">Username</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="hint_search">Mencari Barang</string>
+    <string name="tajuk_halaman_utama">Explore</string>
+    <string name="no_items_in_cart_text">Belum Ada Produk yang Ditambahkan!</string>
+    <string name="add_img_item_desc">image item</string>
+    <string name="cart_check_out_btn">Checkout</string>
+    <string name="pro_details_like_btn_desc">Tombol Like</string>
+    <string name="pro_details_delete_btn_desc">tombol hapus product</string>
+    <string name="minus_btn_desc">tombol kurang</string>
+    <string name="plus_btn_desc">tombol tambah</string>
 </resources>
