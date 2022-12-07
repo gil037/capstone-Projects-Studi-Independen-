@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.farmersapp">
-
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,12 +16,20 @@
         android:theme="@style/Theme.FarmersApp"
         tools:targetApi="31">
         <activity
-            android:name=".DetailProductActivity"
+            android:name=".TambahBarang"
             android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
+        <activity
+            android:name=".DetailProductActivity"
+            android:exported="false"/>
+
         <meta-data
             android:name="android.app.lib_name"
             android:value="" />
+
         <activity
             android:name=".RegisterActivity"
             android:exported="false">
