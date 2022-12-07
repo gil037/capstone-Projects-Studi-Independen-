@@ -24,7 +24,7 @@
         </activity>
         <activity
             android:name=".DetailProductActivity"
-            android:exported="false"></activity>
+            android:exported="false"/>
 
         <meta-data
             android:name="android.app.lib_name"
