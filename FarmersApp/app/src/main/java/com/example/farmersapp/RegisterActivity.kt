@@ -30,8 +30,9 @@ class RegisterActivity : AppCompatActivity() {
             val regPassword=binding.etRegpassword.text.toString()
             val regPhone=binding.etregphone.text.toString()
             val regName=binding.etName.text.toString()
+            val avatar=""
             binding.tvLogin.setOnClickListener {
-                val intent=Intent(this,LoginActivity::class.java)
+                val intent=Intent(this,ProfileActivity::class.java)
                 startActivity(intent)
             }
 //Validasi
@@ -65,29 +66,30 @@ class RegisterActivity : AppCompatActivity() {
                 binding.etregphone.requestFocus()
                 return@setOnClickListener
             }
-         registerAccount(regUsername,regPassword,regPhone,regName)
+         registerAccount(regUsername,regPassword,regPhone,regName,avatar)
         }
     }
 
 
-    private fun registerAccount(regUsername: String, regPassword: String,nama:String,phone:String) {
+    private fun registerAccount(regUsername: String, regPassword: String,nama:String,phone:String,avatar: String) {
         auth.createUserWithEmailAndPassword(regUsername,regPassword)
             .addOnCompleteListener(this){
                 if (it.isSuccessful){
-                    saveDatalogin(regUsername,nama,phone,0)
+                    saveDatalogin(regUsername,nama,phone, avatar,"user")
                     Toast.makeText(this ,"Register Berhasil",Toast.LENGTH_SHORT).show()
                 }else{
                     Toast.makeText(this,"${it.exception?.message}",Toast.LENGTH_SHORT).show()
                 }
             }
     }
-    private fun saveDatalogin(regUsername:String,phone:String,nama:String, usertype:Int){
+    private fun saveDatalogin(regUsername:String,phone:String,nama:String,avatar:String,usertype:String){
         val curentUser=auth.currentUser!!.uid
         val userMap= HashMap<String,Any>()
         userMap["Id"]=curentUser
         userMap["Nama"]=nama
         userMap["Email"]=regUsername
         userMap["Phone"]=phone
+        userMap["Avatar"]=avatar
         userMap["UserType"]=usertype
         reff.child(curentUser).setValue(userMap).addOnCompleteListener{
             if (it.isSuccessful){

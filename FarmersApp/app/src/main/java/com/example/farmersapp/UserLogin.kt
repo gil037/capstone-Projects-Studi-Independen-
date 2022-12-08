@@ -5,5 +5,6 @@ data class UserLogin(
     val nama:String?,
     val username:String?,
     val phone:String?,
-    val usertype:Int?
+    val avatar:String?,
+    val usertype:String?
 )

@@ -61,41 +61,37 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun loginAccount(logUsername: String, logPassword: String) {
-        auth.signInWithEmailAndPassword(logUsername, logPassword)
-            .addOnCompleteListener(this) {
-                if (it.isSuccessful) {
-                    val intent = Intent(applicationContext, TambahBarang::class.java)
-                    startActivity(intent)
-                    Toast.makeText(this, "Welcome To FarmerApp", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
-                }
+
+    private fun loginAccount(logUsername:String,logPassword:String) {
+        auth.signInWithEmailAndPassword(logUsername,logPassword).addOnSuccessListener {
+            cekUser()
+            Toast.makeText(this, "Welcome To FarmerApp", Toast.LENGTH_SHORT).show()
+        }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Email dan Password Invalid", Toast.LENGTH_SHORT).show()
             }
     }
 
-    private fun cekUsertype() {
-        val curentUser = auth.currentUser!!.uid
-        val ref = FirebaseDatabase.getInstance()
-        ref.getReference().child("UserLogin").child(curentUser).child("TypeUser")
-            .addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    val user = snapshot.getValue(UserLogin::class.java)
-                    val userType = user?.usertype
-                    if (userType == 0) {
-                        val intent = Intent(applicationContext, halaman_utama::class.java)
-                        startActivity(intent)
-                    }
-                    if (userType == 1) {
-                        val intent = Intent(applicationContext, cart::class.java)
-                        startActivity(intent)
-                    }
+    private fun cekUser() {
+        val firebaseUser = auth.currentUser!!
+        val ref = FirebaseDatabase.getInstance().getReference("UserLogin")
+        ref.child(firebaseUser.uid).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val userType = snapshot.child("UserType").value
+                if (userType == "user") {
+                    val intent=Intent(applicationContext, TambahBarang::class.java)
+                    startActivity(intent)
                 }
-
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
+                if (userType == "admin") {
+                    val intent = Intent(applicationContext, RegisterActivity::class.java)
+                    startActivity(intent)
                 }
+            }
 
-            })
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
     }
 }
