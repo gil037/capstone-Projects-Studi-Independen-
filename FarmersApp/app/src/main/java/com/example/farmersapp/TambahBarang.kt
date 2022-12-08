@@ -19,6 +19,7 @@ import coil.transform.CircleCropTransformation
 import com.example.farmersapp.databinding.ActivityHalamanUtamaBinding
 import com.example.farmersapp.databinding.ActivityTambahBarangBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.karumi.dexter.Dexter
@@ -29,23 +30,28 @@ import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.karumi.dexter.listener.single.PermissionListener
+import kotlinx.android.synthetic.main.activity_login.view.*
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
+import java.net.URI
 
 class TambahBarang : AppCompatActivity() {
 
     private lateinit var binding: ActivityTambahBarangBinding
     private val CAMERA_REQUEST_CODE = 1
     private val GALLERY_REQUEST_CODE = 2
+    private lateinit var imgUri:Uri
+    private lateinit var auth:FirebaseAuth
+    private lateinit var reff: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTambahBarangBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btnCamera.setOnClickListener {
-          cameraPermision()
+            cameraPermision()
         }
         binding.btnGaleri.setOnClickListener {
-          galeriPermission()
+            galeriPermission()
         }
         binding.circleImageView.setOnClickListener {
             val pictureDialog = AlertDialog.Builder(this)
@@ -62,9 +68,7 @@ class TambahBarang : AppCompatActivity() {
 
             pictureDialog.show()
         }
-
-        }
-
+    }
     private fun galeriPermission() {
       Dexter.withContext(this).withPermission(
           android.Manifest.permission.READ_EXTERNAL_STORAGE
@@ -153,14 +157,19 @@ class TambahBarang : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (resultCode == Activity.RESULT_OK) {
+            val bitmap = data?.extras?.get("data") as Bitmap
+            binding.btnUpload.setOnClickListener {
+                val avatar=binding.circleImageView.imageAlpha.toString()
+                val nama= binding.namaBarang.text.toString()
+                val harga= binding.hargaBarang.text.toString()
+                val deskripsi= binding.deskBarang.text.toString()
 
+                saveBarang(nama, harga, deskripsi,avatar)
+                uploadImg(bitmap)
+            }
             when (requestCode) {
 
                 CAMERA_REQUEST_CODE -> {
-
-                    val bitmap = data?.extras?.get("data") as Bitmap
-
-
                     binding.circleImageView.load(bitmap) {
                         crossfade(true)
                         crossfade(1000)
@@ -181,6 +190,41 @@ class TambahBarang : AppCompatActivity() {
 
         }
 
+    }
+    private fun uploadImg(bitmap: Bitmap){
+        val baos=ByteArrayOutputStream()
+        val database=FirebaseStorage.getInstance().reference.child("Imagebarang/${FirebaseAuth.getInstance().currentUser!!.uid}")
+        bitmap.compress(Bitmap.CompressFormat.JPEG,100,baos)
+
+        val img=baos.toByteArray()
+        database.putBytes(img).addOnCompleteListener{
+            if (it.isSuccessful){
+                database.downloadUrl.addOnCompleteListener{task->
+                    task.result.let { uri ->
+                        imgUri=uri
+
+                    }
+
+                }
+            }
+        }
+    }
+
+    private fun saveBarang(nama:String,harga:String,deskripsi:String,avatar:String){
+       val curentUser=auth.currentUser!!.uid
+        val userMap=HashMap<String,Any>()
+        userMap["uid"]=curentUser
+        userMap["Nama"]=nama
+        userMap["Harga"]=harga
+        userMap["Deskripsi"]=deskripsi
+        userMap["Avatar"]=avatar
+    reff.child("Data Barang").setValue(userMap).addOnCompleteListener {
+        if (it.isSuccessful){
+            Toast.makeText(applicationContext,"Success",Toast.LENGTH_SHORT).show()
+        }else{
+            Toast.makeText(this,"${it.exception?.message}",Toast.LENGTH_SHORT).show()
+        }
+    }
     }
 }
 
