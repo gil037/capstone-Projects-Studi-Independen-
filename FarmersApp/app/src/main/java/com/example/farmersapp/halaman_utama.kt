@@ -1,8 +1,7 @@
-package com.gilang.farmers
+package com.example.farmersapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.farmersapp.R
 import com.example.farmersapp.databinding.ActivityHalamanUtamaBinding
 
 class halaman_utama : AppCompatActivity() {

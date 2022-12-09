@@ -25,6 +25,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".halaman_utama"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".TambahBarang"
             android:exported="false">
             <meta-data
