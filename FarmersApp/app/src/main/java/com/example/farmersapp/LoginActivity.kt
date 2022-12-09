@@ -83,7 +83,7 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 if (userType == "admin") {
-                    val intent = Intent(applicationContext, RegisterActivity::class.java)
+                    val intent = Intent(applicationContext, ProfileActivity::class.java)
                     startActivity(intent)
                 }
             }
