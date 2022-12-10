@@ -61,40 +61,45 @@ class TambahBarang : AppCompatActivity() {
         if (deskripsi.isEmpty()){
             binding.deskBarang.error= getString(R.string.nama_barang)
             binding.deskBarang.requestFocus()
-        }else {
-                addData(nama, harga, deskripsi, avatar)
+        }else if (imgUri==null){
 
+        }
+        else {
+                addDatatostoge()
         }
     }
 
-    private fun addData(nama:String,harga:String,deskripsi:String,avatar:String) {
+    private fun addDatatostoge() {
         val time=System.currentTimeMillis()
-        val curent=auth.currentUser!!.uid
-        val filePath = "Image Barang/" + auth.uid
-       val hashMap=HashMap<String,Any>()
-        hashMap["id"]=time
-        hashMap["Nama"]=nama
-        hashMap["Harga"]=harga
-        hashMap["Deskripsi"]=deskripsi
-        hashMap["uid"]=curent
-        hashMap["Avatar"] = avatar
-
+        val filePath = "Image Barang/$time"
         val  image=FirebaseStorage.getInstance().getReference(filePath)
-        image.putFile(imgUri!!).addOnSuccessListener {
-                snapshot->
-            val uriTask: Task<Uri> =snapshot.storage.downloadUrl
+        image.putFile(imgUri!!).addOnSuccessListener {snapshot->
+            val uriTask:Task<Uri> =snapshot.storage.downloadUrl
             while (!uriTask.isSuccessful);
             val uploadImg= "${uriTask.result}"
 
-        }
-        val ref=FirebaseDatabase.getInstance().getReference("Data Barang")
-            ref
-            .child("$time").setValue(hashMap).addOnSuccessListener {
-                Toast.makeText(this,"Berhasil Tambah Data",Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener{
-            Toast.makeText(this,"gagal tambah data ${it.message}",Toast.LENGTH_SHORT).show()
-            }
+            uploadData(uploadImg,time)
+        }.addOnFailureListener{
 
+        }
+
+    }
+
+    private fun uploadData(uploadImg: String, time: Long) {
+        val curent=auth.currentUser!!.uid
+        val hashMap= HashMap<String,Any>()
+        hashMap["uid"]=curent
+        hashMap["Nama"]="$nama"
+        hashMap["Harga"]="$harga"
+        hashMap["Deskripsi"]="$deskripsi"
+        hashMap["Url"]="$uploadImg"
+        hashMap["time"]="$time"
+        val ref=FirebaseDatabase.getInstance().getReference("Data Barang")
+        ref.child("$time").setValue(hashMap).addOnSuccessListener {
+            Toast.makeText(this,"Berhasil Tambah Data",Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener {
+
+        }
     }
 
 
