@@ -14,7 +14,7 @@ var time:String=""
         Nama: String,
         Harga: String,
         Deskripsi: String,
-        Url: Int,
+        Url: String,
         time: String,
     ) {
         this.uid = uid
@@ -22,6 +22,7 @@ var time:String=""
         this.Harga = Harga
         this.Deskripsi = Deskripsi
         this.time = time
+        this.Url=Url
     }
 
 }
