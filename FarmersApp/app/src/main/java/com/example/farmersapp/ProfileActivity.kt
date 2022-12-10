@@ -28,7 +28,10 @@ class ProfileActivity : AppCompatActivity() {
     binding.ivProfile.setOnClickListener{
 
     }
-
+        binding.buttonEdit.setOnClickListener {
+            val intent=Intent(this,UpdateProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
     private fun loadUser(){
         val ref=FirebaseDatabase.getInstance().getReference("UserLogin")
@@ -36,7 +39,7 @@ class ProfileActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                val email="${snapshot.child("Email").value}"
                val nama="${snapshot.child("Nama").value}"
-               val avatar="${snapshot.child("Nama").value}"
+               val avatar="${snapshot.child("Avatar").value}"
                val uid="${snapshot.child("Id").value}"
                val phone="${snapshot.child("Phone").value}"
                val userType="${snapshot.child("UserType").value}"
@@ -46,7 +49,7 @@ class ProfileActivity : AppCompatActivity() {
                 binding.tvHp.text=phone
                 try {
                     Glide.with(this@ProfileActivity)
-                        .load(ivProfile)
+                        .load(avatar)
                         .into(binding.ivProfile)
                 }catch (e:Exception){
 
