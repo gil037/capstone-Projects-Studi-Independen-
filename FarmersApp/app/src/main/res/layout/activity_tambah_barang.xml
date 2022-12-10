@@ -4,14 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".TambahBarang">
 
 
     <ImageView
         android:id="@+id/circleImageView"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="200dp"
-        android:src="@color/cardview_dark_background"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -23,47 +26,52 @@
         android:id="@+id/nama_barang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:fontFamily="@font/nunito_sans_regular"
         android:hint="Nama barang"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView"
-        app:layout_constraintVertical_bias="0.131" />
+        app:layout_constraintEnd_toEndOf="@+id/circleImageView"
+        app:layout_constraintStart_toStartOf="@+id/circleImageView"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
 
     <EditText
         android:id="@+id/harga_barang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:fontFamily="@font/nunito_sans_regular"
         android:hint="Harga barang"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nama_barang"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintEnd_toEndOf="@+id/nama_barang"
+        app:layout_constraintStart_toStartOf="@+id/nama_barang"
+        app:layout_constraintTop_toBottomOf="@+id/nama_barang" />
 
     <EditText
         android:id="@+id/desk_barang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="18dp"
+        android:fontFamily="@font/nunito_sans_regular"
         android:hint="Deskripsi"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/harga_barang"
-        app:layout_constraintVertical_bias="0.07" />
+        app:layout_constraintEnd_toEndOf="@+id/harga_barang"
+        app:layout_constraintStart_toStartOf="@+id/harga_barang"
+        app:layout_constraintTop_toBottomOf="@+id/harga_barang" />
 
     <Button
         android:id="@+id/btn_upload"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="upload"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desk_barang"
-        app:layout_constraintVertical_bias="0.179" />
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/nunito_sans_bold"
+        android:theme="@style/ButtonGeneral"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/desk_barang"
+        app:layout_constraintStart_toStartOf="@+id/desk_barang"
+        app:layout_constraintTop_toBottomOf="@+id/desk_barang" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
