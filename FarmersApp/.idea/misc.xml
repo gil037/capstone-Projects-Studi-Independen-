@@ -5,7 +5,21 @@
       <map>
         <entry key="..\:/MSIB/Capstone/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/activity_detail_product.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/drawable-v24/ic_baseline_shopping_cart_24.xml" value="0.196" />
+        <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/activity_cart.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/activity_detail_product.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/activity_halaman_utama.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/activity_profile.xml" value="0.264" />
+        <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/activity_register.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/activity_tambah_barang.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/activity_update_profile.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/cart_list_item.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/item.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/layout_circular_loader.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/layout_no_icon_appbar.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/MSi-GAMING/Documents/capstone-Projects-Studi-Independen-/FarmersApp/app/src/main/res/layout/navigation.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

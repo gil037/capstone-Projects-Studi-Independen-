@@ -43,6 +43,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:layout_marginStart="35dp"
         android:fontFamily="@font/nunito_sans_bold"
         android:textAlignment="textStart"
         android:textColor="@color/black"
@@ -52,6 +53,20 @@
         app:layout_constraintStart_toStartOf="@+id/tv_nama_barang"
         app:layout_constraintTop_toBottomOf="@+id/tv_nama_barang"
         tools:text="@tools:sample/us_phones" />
+
+    <TextView
+        android:id="@+id/rp_harga"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_sans_bold"
+        android:text="Rp."
+        android:layout_marginTop="4dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_harga_barang"
+        app:layout_constraintStart_toStartOf="@+id/tv_nama_barang"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nama_barang" />
 
 <!--    <TextView-->
 <!--        android:id="@+id/tv_deskripsi_barang"-->
@@ -75,6 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:src="@drawable/heart_icon_drawable"
+        android:theme="@style/ButtonGeneral"
         app:layout_constraintEnd_toEndOf="@+id/tv_harga_barang"
         app:layout_constraintHorizontal_bias="0.037"
         app:layout_constraintStart_toEndOf="@+id/iv_barang"
@@ -86,6 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:src="@drawable/ic_baseline_shopping_cart_24"
+        android:theme="@style/ButtonGeneral"
         app:layout_constraintEnd_toEndOf="@+id/tv_harga_barang"
         app:layout_constraintStart_toEndOf="@+id/ib_favorite"
         app:layout_constraintTop_toBottomOf="@+id/tv_harga_barang" />
