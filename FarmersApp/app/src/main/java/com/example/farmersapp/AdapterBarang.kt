@@ -1,6 +1,7 @@
 package com.example.farmersapp
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
@@ -26,7 +27,6 @@ class AdapterBarang : RecyclerView.Adapter<AdapterBarang.HolderBarang>, Filterab
         this.filterList = barangArrayList
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderBarang {
         binding = ItemBinding.inflate(LayoutInflater.from(context), parent, false)
         return HolderBarang(binding.root)
@@ -34,10 +34,24 @@ class AdapterBarang : RecyclerView.Adapter<AdapterBarang.HolderBarang>, Filterab
 
     override fun onBindViewHolder(holder: HolderBarang, position: Int) {
         val model = barangArrayList[position]
-
+        val barang=model.time
+        val nama=model.Nama
+        val deskripsi=model.Deskripsi
+        val img=model.Url
+        val harga=model.Harga
         holder.namaItem.text = model.Nama
         holder.hargaItem.text = model.Harga
         Glide.with(context).load(model.Url).into(holder.imageBarang)
+
+        holder.itemView.setOnClickListener{
+            val intent= Intent(context,DetailProductActivity::class.java)
+            intent.putExtra("barangId",barang)
+            intent.putExtra("nama",nama)
+            intent.putExtra("deskripsi",deskripsi)
+            intent.putExtra("img",img)
+            intent.putExtra("harga",harga)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -51,10 +65,15 @@ class AdapterBarang : RecyclerView.Adapter<AdapterBarang.HolderBarang>, Filterab
 
     }
 
+
+
     override fun getFilter(): Filter {
         if (filter == null) {
             filter = FilterBarang(filterList, this)
         }
         return filter as FilterBarang
+    }
+    companion object{
+        const val EXTRA_DATA="extra data"
     }
 }

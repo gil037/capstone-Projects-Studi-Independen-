@@ -1,5 +1,6 @@
 package com.example.farmersapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -21,7 +22,12 @@ class halaman_utama : AppCompatActivity() {
 
         loadBarang()
 
-        binding.searchView.addTextChangedListener(object :TextWatcher{
+        binding.cart.setOnClickListener {
+            val intent=Intent(this,ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
+       /* binding.searchView.addTextChangedListener(object :TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -39,7 +45,7 @@ class halaman_utama : AppCompatActivity() {
 
             }
 
-        })
+        })*/
     }
 
     private fun loadBarang() {
@@ -63,5 +69,8 @@ class halaman_utama : AppCompatActivity() {
             }
 
         })
+    }
+    companion object{
+        val INTENT_PARCELABLE="intent"
     }
 }

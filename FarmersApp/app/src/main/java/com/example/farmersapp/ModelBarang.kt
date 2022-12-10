@@ -1,6 +1,6 @@
 package com.example.farmersapp
 
-class ModelBarang {
+ class ModelBarang {
 var uid:String=""
 var Nama:String=""
 var Harga:String=""
