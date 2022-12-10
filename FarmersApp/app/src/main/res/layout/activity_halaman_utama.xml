@@ -7,19 +7,21 @@
     android:background="@color/background"
     tools:context=".halaman_utama">
 
-    <androidx.appcompat.widget.SearchView
+    <EditText
         android:id="@+id/search_view"
         android:layout_width="292dp"
         android:layout_height="57dp"
         android:layout_marginStart="18dp"
         android:layout_marginTop="23dp"
+        android:hint="@string/hint_search"
         android:background="@drawable/search"
+        android:drawableStart="@drawable/ic_baseline_search_24"
         android:elevation="5dp"
         app:iconifiedByDefault="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:queryBackground="@android:color/transparent"
-        app:queryHint="@string/hint_search" />
+         />
 
     <ImageButton
         android:id="@+id/cart"

@@ -30,7 +30,6 @@ class TambahBarang : AppCompatActivity() {
         binding = ActivityTambahBarangBinding.inflate(layoutInflater)
         setContentView(binding.root)
     auth=FirebaseAuth.getInstance()
-
         binding.btnUpload.setOnClickListener {
             validateData()
         }
@@ -44,7 +43,6 @@ class TambahBarang : AppCompatActivity() {
     private var nama=""
     private var harga=""
     private var deskripsi=""
-    private var avatar=""
     private fun validateData() {
         nama=binding.namaBarang.text.toString().trim()
         harga=binding.hargaBarang.text.toString().trim()
@@ -105,31 +103,19 @@ class TambahBarang : AppCompatActivity() {
 
     private fun showImage() {
         val popmenu = PopupMenu(this, binding.circleImageView)
-        popmenu.menu.add(Menu.NONE, 0, 0, "Camera")
+
         popmenu.menu.add(Menu.NONE, 1, 1, "Galery")
         popmenu.show()
         popmenu.setOnMenuItemClickListener { item ->
             val id = item.itemId
-            if (id == 0) {
-                pickCamera()
-            } else if (id == 1) {
+             if (id == 1) {
                 pickGalery()
             }
             true
         }
     }
 
-    private fun pickCamera() {
-        val values = ContentValues()
-        values.put(MediaStore.Images.Media.TITLE, "Camera")
-        values.put(MediaStore.Images.Media.DESCRIPTION, "Camera description")
 
-        imgUri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
-
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, imgUri)
-        cameraActivity.launch(intent)
-    }
 
     private fun pickGalery() {
         val intent = Intent(Intent.ACTION_PICK)
@@ -149,18 +135,6 @@ class TambahBarang : AppCompatActivity() {
             }
         }
     )
-    private val cameraActivity = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult(),
-        ActivityResultCallback<ActivityResult> { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                val data = result.data
-                // imgUri=data!!.data
 
-                binding.circleImageView.setImageURI(imgUri)
-            } else {
-                Toast.makeText(this, "Batal", Toast.LENGTH_SHORT).show()
-            }
-        }
-    )
 }
 
