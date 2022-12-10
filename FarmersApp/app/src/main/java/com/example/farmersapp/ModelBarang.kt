@@ -14,14 +14,13 @@ var time:String=""
         Nama: String,
         Harga: String,
         Deskripsi: String,
-        Url: String,
+        Url: Int,
         time: String,
     ) {
         this.uid = uid
         this.Nama = Nama
         this.Harga = Harga
         this.Deskripsi = Deskripsi
-        this.Url = Url
         this.time = time
     }
 

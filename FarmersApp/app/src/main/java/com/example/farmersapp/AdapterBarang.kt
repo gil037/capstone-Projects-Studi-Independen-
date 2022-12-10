@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.farmersapp.databinding.ItemBinding
+import kotlinx.android.synthetic.main.activity_tambah_barang.view.*
 import kotlinx.android.synthetic.main.item.view.*
 
 class AdapterBarang:RecyclerView.Adapter<AdapterBarang.HolderBarang>,Filterable{
@@ -33,15 +35,10 @@ class AdapterBarang:RecyclerView.Adapter<AdapterBarang.HolderBarang>,Filterable{
 
     override fun onBindViewHolder(holder: HolderBarang, position: Int) {
         val model=barangArrayList[position]
-        val uid=model.uid
-        val nama=model.Nama
-        val harga=model.Harga
-        val deskripsi=model.Deskripsi
-        val time=model.time
 
         holder.namaItem.text=model.Nama
         holder.hargaItem.text=model.Harga
-
+        Glide.with(context).load(model.Url).into(holder.imageBarang)
     }
 
     override fun getItemCount(): Int {
