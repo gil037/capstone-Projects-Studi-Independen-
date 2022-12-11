@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.farmersapp.databinding.ItemBinding
@@ -51,7 +52,12 @@ class AdapterBarang : RecyclerView.Adapter<AdapterBarang.HolderBarang>, Filterab
             intent.putExtra("img",img)
             intent.putExtra("harga",harga)
             context.startActivity(intent)
+        binding.btnLogdetail.setOnClickListener {
+            val i=Intent(context,DetailProductActivity::class.java)
+            context.startActivity(i)
         }
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -73,7 +79,5 @@ class AdapterBarang : RecyclerView.Adapter<AdapterBarang.HolderBarang>, Filterab
         }
         return filter as FilterBarang
     }
-    companion object{
-        const val EXTRA_DATA="extra data"
-    }
+
 }

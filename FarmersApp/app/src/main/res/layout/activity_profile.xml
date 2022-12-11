@@ -32,8 +32,8 @@
         android:id="@+id/textView_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nama :"
-        android:textSize="20dp"
+        android:text="@string/nama"
+        android:textSize="20sp"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="18dp"
         android:layout_marginStart="18dp"
@@ -47,8 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans_regular"
-        android:text="Nama"
-        android:textSize="20dp"
+        android:text="@string/nama"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/textView_name"
         app:layout_constraintTop_toBottomOf="@+id/textView_name" />
 
@@ -60,8 +60,8 @@
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
         android:fontFamily="@font/nunito_sans_bold"
-        android:text="Nomer :"
-        android:textSize="20dp"
+        android:text="@string/nomer"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/tvName"
         app:layout_constraintStart_toStartOf="@+id/tvName"
         app:layout_constraintTop_toBottomOf="@+id/tvName" />
@@ -72,8 +72,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
-        android:text="Nomer Hp"
-        android:textSize="20dp"
+        android:text="@string/nomer"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/textView_Nohp"
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="@+id/textView_Nohp"
@@ -83,8 +83,8 @@
         android:id="@+id/textView_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email :"
-        android:textSize="20dp"
+        android:text="@string/email"
+        android:textSize="20sp"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="18dp"
         android:layout_marginStart="18dp"
@@ -102,7 +102,7 @@
         android:fontFamily="@font/nunito_sans_bold"
         android:theme="@style/ButtonGeneral"
         android:textColor="@color/black"
-        android:text="Edit Profile"
+        android:text="@string/edit_profile"
         app:layout_constraintEnd_toEndOf="@+id/textView_name"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/textView_name"
@@ -119,5 +119,17 @@
         app:layout_constraintStart_toStartOf="@+id/textView_email"
         app:layout_constraintTop_toBottomOf="@+id/textView_email" />
 
-
+    <Button
+        android:id="@+id/btn_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="LogOut"
+        android:theme="@style/ButtonGeneral"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

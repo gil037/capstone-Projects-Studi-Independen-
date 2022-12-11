@@ -69,8 +69,6 @@ class RegisterActivity : AppCompatActivity() {
          registerAccount(regUsername,regPassword,regPhone,regName,avatar)
         }
     }
-
-
     private fun registerAccount(regUsername: String, regPassword: String,nama:String,phone:String,avatar: String) {
         auth.createUserWithEmailAndPassword(regUsername,regPassword)
             .addOnCompleteListener(this){

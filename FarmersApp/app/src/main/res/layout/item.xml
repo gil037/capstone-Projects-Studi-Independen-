@@ -12,6 +12,7 @@
         android:id="@+id/iv_barang"
         android:layout_width="140dp"
         android:layout_height="120dp"
+        android:contentDescription="@string/image"
         android:background="@drawable/banner_barang"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +60,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans_bold"
-        android:text="Rp."
+        android:text="@string/rp"
         android:layout_marginTop="4dp"
         android:textAlignment="textStart"
         android:textColor="@color/black"
@@ -68,42 +69,20 @@
         app:layout_constraintStart_toStartOf="@+id/tv_nama_barang"
         app:layout_constraintTop_toBottomOf="@+id/tv_nama_barang" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/tv_deskripsi_barang"-->
-<!--        android:layout_width="251dp"-->
-<!--        android:layout_height="58dp"-->
-<!--        android:layout_marginTop="4dp"-->
-<!--        android:layout_marginEnd="12dp"-->
-<!--        android:fontFamily="@font/nunito_sans_semibold"-->
-<!--        android:textAlignment="textStart"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="12sp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/tv_nama_barang"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/tv_harga_barang"-->
-<!--        tools:text="@tools:sample/lorem/random" />-->
 
-    <ImageButton
-        android:id="@+id/ib_favorite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/heart_icon_drawable"
-        android:theme="@style/ButtonGeneral"
-        app:layout_constraintEnd_toEndOf="@+id/tv_harga_barang"
-        app:layout_constraintHorizontal_bias="0.037"
-        app:layout_constraintStart_toEndOf="@+id/iv_barang"
-        app:layout_constraintTop_toBottomOf="@+id/tv_harga_barang"
-        tools:ignore="MissingConstraints" />
 
-    <ImageButton
-        android:layout_width="0dp"
+
+    <ImageView
+        android:id="@+id/btn_logdetail"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="235dp"
+        android:contentDescription="@string/image"
+        android:layout_marginTop="10dp"
+        android:background="@color/purple_700"
         android:src="@drawable/ic_baseline_shopping_cart_24"
         android:theme="@style/ButtonGeneral"
         app:layout_constraintEnd_toEndOf="@+id/tv_harga_barang"
-        app:layout_constraintStart_toEndOf="@+id/ib_favorite"
+        app:layout_constraintStart_toEndOf="@+id/iv_barang"
         app:layout_constraintTop_toBottomOf="@+id/tv_harga_barang" />
 </androidx.constraintlayout.widget.ConstraintLayout>
