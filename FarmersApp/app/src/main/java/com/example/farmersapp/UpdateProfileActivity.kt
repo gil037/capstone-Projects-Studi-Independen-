@@ -130,15 +130,12 @@ class UpdateProfileActivity : AppCompatActivity() {
 
     private fun showImage() {
         val popmenu = PopupMenu(this, binding.edtImage)
-        popmenu.menu.add(Menu.NONE, 0, 0, "Camera")
         popmenu.menu.add(Menu.NONE, 1, 1, "Galery")
         popmenu.show()
 
         popmenu.setOnMenuItemClickListener { item ->
             val id = item.itemId
-            if (id == 0) {
-                pickCamera()
-            } else if (id == 1) {
+           if (id == 1) {
                 pickGalery()
             }
             true

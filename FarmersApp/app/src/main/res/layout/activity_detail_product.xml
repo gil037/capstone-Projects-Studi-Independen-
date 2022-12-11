@@ -17,6 +17,7 @@
             android:layout_height="200dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:contentDescription="@string/image"
             android:layout_marginEnd="16dp"
             android:src="@drawable/ic_launcher_background"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +31,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="314dp"
-        android:text="Nama Product :"
+        android:text="@string/nama_product"
         android:textStyle="bold"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Product"
+        android:text="@string/harga"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.098"
@@ -55,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:text="Rp."
+        android:text="@string/rp"
         app:layout_constraintBottom_toTopOf="@+id/tv2"
         app:layout_constraintEnd_toStartOf="@+id/tv_harga"
         app:layout_constraintHorizontal_bias="0.937"
@@ -70,7 +71,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="278dp"
-        android:text="Product Description : "
+        android:text="@string/product_description"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -82,34 +83,23 @@
         android:layout_width="match_parent"
         android:layout_height="200sp"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Description"
+        android:text="@string/description"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/tv2"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <Button
-        android:id="@+id/btn_pesan"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="275dp"
-        android:text="Pesan"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.743"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+        app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
 
     <Button
         android:id="@+id/btn_keranjang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
         android:layout_marginTop="20dp"
-        android:text="Masukan Keranjang"
-        app:layout_constraintStart_toEndOf="@+id/btn_pesan"
+        android:text="@string/pesan"
+        android:theme="@style/ButtonGeneral"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_description" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

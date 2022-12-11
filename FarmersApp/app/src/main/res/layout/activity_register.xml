@@ -22,8 +22,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans_bold"
-        android:text="Daftar"
-        android:textSize="28dp"
+        android:text="@string/daftar"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/iv_farmer"
         app:layout_constraintTop_toBottomOf="@+id/iv_farmer" />
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
-        android:text="Nama"
+        android:text="@string/nama"
         android:textStyle="bold"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
@@ -50,7 +50,8 @@
         android:layout_marginEnd="18dp"
         app:layout_constraintEnd_toEndOf="@+id/tv_regnama"
         app:layout_constraintStart_toStartOf="@+id/tv_regnama"
-        app:layout_constraintTop_toBottomOf="@+id/tv_regnama"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_regnama"
+        />
 
     <TextView
         android:id="@+id/tv_regusername"
@@ -79,8 +80,7 @@
         android:id="@+id/tv_regphone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:text="Nomer Telepon"
+        android:text="@string/nomer_telepon"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
         android:textStyle="bold"
@@ -93,6 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
+        android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_regphone" />
@@ -100,7 +101,7 @@
         android:id="@+id/tv_regpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Password"
+        android:text="@string/password"
         android:textStyle="bold"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
@@ -120,8 +121,10 @@
         android:id="@+id/btnregister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Daftar"
+        android:text="@string/daftar"
         android:layout_marginTop="5dp"
+        android:theme="@style/ButtonGeneral"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/tv_login"
         app:layout_constraintStart_toStartOf="@+id/et_regpassword"
         app:layout_constraintTop_toBottomOf="@+id/tv_login" />
@@ -135,7 +138,7 @@
         android:layout_marginEnd="18dp"
         android:fontFamily="@font/nunito_sans_bold"
         android:layout_marginTop="18dp"
-        android:text="Silahkan Login Jika sudah punya akun"
+        android:text="@string/silahkan_login_jika_sudah_punya_akun"
         app:layout_constraintEnd_toEndOf="@+id/et_regpassword"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/et_regpassword"

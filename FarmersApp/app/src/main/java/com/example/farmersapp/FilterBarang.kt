@@ -22,15 +22,7 @@ class FilterBarang:Filter {
                 if (filterList[i].Nama.contains(constraint)) {
                     filterModel.add(filterList[i])
                 }
-                if (filterList[i].Harga.contains(constraint)) {
-                    filterModel.add(filterList[i])
-                }
-                if (filterList[i].Deskripsi.contains(constraint)) {
-                    filterModel.add(filterList[i])
-                }
-                if (filterList[i].Url.contains(constraint)) {
-                    filterModel.add(filterList[i])
-                }
+
             }
             results.count=filterModel.size
             results.values=filterModel

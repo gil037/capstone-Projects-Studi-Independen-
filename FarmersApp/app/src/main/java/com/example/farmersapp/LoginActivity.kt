@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
+import android.view.View
 import android.widget.Toast
 import com.example.farmersapp.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -12,18 +13,19 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_login.*
 
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
-    private val database: DatabaseReference = FirebaseDatabase.getInstance().reference
-    private lateinit var pref: UserPreferences
+    private lateinit var progressBar:View
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = FirebaseAuth.getInstance()
+        progressBar=binding.progressBar
         binding.btnRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
@@ -59,6 +61,7 @@ class LoginActivity : AppCompatActivity() {
 
 
     private fun loginAccount(logUsername:String,logPassword:String) {
+        proggressLoading(true,progressBar)
         auth.signInWithEmailAndPassword(logUsername,logPassword).addOnSuccessListener {
             cekUser()
             Toast.makeText(this, "Welcome To FarmerApp", Toast.LENGTH_SHORT).show()
@@ -66,6 +69,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Email dan Password Invalid", Toast.LENGTH_SHORT).show()
             }
+        proggressLoading(false,progressBar)
     }
 
     private fun cekUser() {
@@ -89,5 +93,12 @@ class LoginActivity : AppCompatActivity() {
             }
 
         })
+    }
+    private fun proggressLoading(loading: Boolean, progressBar: View) {
+        if (loading){
+            progressBar.visibility=View.VISIBLE
+        }else{
+            progressBar.visibility=View.GONE
+        }
     }
 }

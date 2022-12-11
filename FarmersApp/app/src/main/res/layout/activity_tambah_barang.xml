@@ -30,7 +30,7 @@
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
         android:fontFamily="@font/nunito_sans_regular"
-        android:hint="Nama barang"
+        android:hint="@string/nama_barangt"
         app:layout_constraintEnd_toEndOf="@+id/circleImageView"
         app:layout_constraintStart_toStartOf="@+id/circleImageView"
         app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
@@ -43,7 +43,7 @@
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
         android:fontFamily="@font/nunito_sans_regular"
-        android:hint="Harga barang"
+        android:hint="@string/harga_barang"
         app:layout_constraintEnd_toEndOf="@+id/nama_barang"
         app:layout_constraintStart_toStartOf="@+id/nama_barang"
         app:layout_constraintTop_toBottomOf="@+id/nama_barang" />
@@ -56,7 +56,7 @@
         android:layout_marginTop="18dp"
         android:layout_marginEnd="18dp"
         android:fontFamily="@font/nunito_sans_regular"
-        android:hint="Deskripsi"
+        android:hint="@string/deskripsi"
         app:layout_constraintEnd_toEndOf="@+id/harga_barang"
         app:layout_constraintStart_toStartOf="@+id/harga_barang"
         app:layout_constraintTop_toBottomOf="@+id/harga_barang" />
@@ -65,7 +65,7 @@
         android:id="@+id/btn_upload"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="upload"
+        android:text="@string/upload"
         android:layout_marginTop="18dp"
         android:fontFamily="@font/nunito_sans_bold"
         android:theme="@style/ButtonGeneral"
