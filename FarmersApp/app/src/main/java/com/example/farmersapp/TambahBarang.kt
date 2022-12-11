@@ -29,7 +29,7 @@ class TambahBarang : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTambahBarangBinding.inflate(layoutInflater)
         setContentView(binding.root)
-    auth=FirebaseAuth.getInstance()
+        auth=FirebaseAuth.getInstance()
         binding.btnUpload.setOnClickListener {
             validateData()
         }

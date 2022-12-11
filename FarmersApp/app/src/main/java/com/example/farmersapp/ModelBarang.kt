@@ -1,6 +1,6 @@
 package com.example.farmersapp
 
-class ModelBarang {
+ class ModelBarang {
 var uid:String=""
 var Nama:String=""
 var Harga:String=""
@@ -21,8 +21,8 @@ var time:String=""
         this.Nama = Nama
         this.Harga = Harga
         this.Deskripsi = Deskripsi
-        this.Url = Url
         this.time = time
+        this.Url=Url
     }
 
 }
