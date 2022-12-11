@@ -43,7 +43,7 @@ class DetailProductActivity : AppCompatActivity() {
 
         binding.btnPesan.setOnClickListener {
         AlertDialog.Builder(this).apply {
-            setTitle("Pembelian")
+            setTitle("Pembelia")
             setMessage("Anda yakin ingin pesan barang?")
             setPositiveButton("Yakin"){_,_->}
             setNegativeButton("Tidak"){_,_->}
